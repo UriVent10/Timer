@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Color Timer</title>
+    <meta name="description" content="Visual color timer for trainings">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link id="favicon" href="" rel="icon" type="image/x-icon">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #main {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #start:hover,
+        #addColor:hover {
+            background-color: #1a202c;
+            color: #fff;
+        }
+
+        .color-box {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border: 1px solid #ccc;
+        }
+
+        #colorForm {
+            max-width: 90%;
+            margin: auto;
+        }
+
+        #colorInputs {
+            text-align: center;
+        }
+
+        #addColor {
+            display: block;
+            margin: 10px auto;
+            background-color: #2677bb;
+            color: #fff;
+        }
+
+        #start {
+            background-color: #2677bb;
+            color: #fff;
+        }
+
+        #start,
+        #addColor {
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+
+<body class="font-body bg-gray-100">
+    <div id="main" class="text-center">
+        <form id="colorForm" class="p-4 bg-white rounded-md shadow-md relative">
+            <div id="formContent">
+                <div class="mb-4">
+                    <label for="colorSequence" class="block text-gray-700 text-sm font-bold mb-2">Color
+                        Sequence:</label>
+                    <div id="colorInputs">
+                        <!-- Color inputs will be added dynamically here -->
+                    </div>
+                    <button type="button" id="addColor"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                        Add Color
+                    </button>
+                </div>
+
+                <div class="mb-4">
+                    <label for="interval" class="block text-gray-700 text-sm font-bold mb-2">Interval (in
+                        seconds):</label>
+                    <input type="number" id="interval" name="interval" required
+                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                        aria-label="Interval in seconds">
+
+                </div>
+                <button id="start"
+                    class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                    Start
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="main.js" defer></script>
+</body>
+
+</html>
